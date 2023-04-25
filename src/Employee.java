@@ -29,9 +29,9 @@ public class Employee {
 
 
 
-    // public void setFIO(String fio){
-    //     this.FIO = fio;
-    //}
+     public void setFIO(String fio){
+         this.FIO = fio;
+    }
     public void setDepartment(int department1){
         this.department = department1;
     }
