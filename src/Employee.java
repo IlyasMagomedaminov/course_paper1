@@ -23,15 +23,13 @@ public class Employee {
     public float getSalary(){
         return this.salary;
     }
-    public int getId(){
-        return this.Id;
+
+
+
+
+     public void setFIO(String fio){
+         this.FIO = fio;
     }
-
-
-
-    // public void setFIO(String fio){
-    //     this.FIO = fio;
-    //}
     public void setDepartment(int department1){
         this.department = department1;
     }
