@@ -30,23 +30,25 @@ public class Main {
 
     }
     private static void listOfAllEmployeesAndSalaries(Employee[] storageOfEmployeeRecords){
-        for (int i = 0 ;i < storageOfEmployeeRecords.length;i++) {
-            System.out.println(storageOfEmployeeRecords[i]);
+        for (Employee storageOfEmployeeRecord : storageOfEmployeeRecords) {
+            System.out.println(storageOfEmployeeRecord);
         }
         System.out.println();
     }
     private static void theAmountOfExpensesPerMonth(Employee[] storageOfEmployeeRecords){
         int sum = 0;
 
-        for(int i = 0; i < storageOfEmployeeRecords.length;i++){
-            sum+= storageOfEmployeeRecords[i].getSalary();
+        for (Employee storageOfEmployeeRecord : storageOfEmployeeRecords) {
+            if (storageOfEmployeeRecord != null) {
+                sum += storageOfEmployeeRecord.getSalary();
+            }
         }
         System.out.println(sum + " рублей.\n");
     }
     private static void employeeWithMinimumWage(Employee[] storageOfEmployeeRecords){
         Employee employeeWithMinimumWage = storageOfEmployeeRecords[0];
         for(int i = 1; i < storageOfEmployeeRecords.length;i++) {
-            if (employeeWithMinimumWage.getSalary() > storageOfEmployeeRecords[i].getSalary()) {
+            if (storageOfEmployeeRecords[i] != null && employeeWithMinimumWage.getSalary() > storageOfEmployeeRecords[i].getSalary()) {
                 employeeWithMinimumWage = storageOfEmployeeRecords[i];
             }
         }
@@ -54,23 +56,28 @@ public class Main {
     }
     private static void employeeWithTheMaximumSalary(Employee[] storageOfEmployeeRecords){
         Employee employeeWithTheMaximumSalary = storageOfEmployeeRecords[0];
-        for(int i = 0; i < storageOfEmployeeRecords.length;i++){
-            if (employeeWithTheMaximumSalary.getSalary() < storageOfEmployeeRecords[i].getSalary()){
-                employeeWithTheMaximumSalary = storageOfEmployeeRecords[i];
+        for (Employee storageOfEmployeeRecord : storageOfEmployeeRecords) {
+            if (storageOfEmployeeRecord != null && employeeWithTheMaximumSalary.getSalary() < storageOfEmployeeRecord.getSalary()) {
+                employeeWithTheMaximumSalary = storageOfEmployeeRecord;
             }
         }
         System.out.println(employeeWithTheMaximumSalary  + "\n");
     }
     private static void FIO(Employee[] storageOfEmployeeRecords){
-        for (int i = 0; i < storageOfEmployeeRecords.length; i++ ){
-            System.out.println(storageOfEmployeeRecords[i].getFIO());
+        for (Employee storageOfEmployeeRecord : storageOfEmployeeRecords) {
+            if (storageOfEmployeeRecord != null) {
+                System.out.println(storageOfEmployeeRecord.getFIO());
+            }
+
         }
     }
     private static void averageSalaryValue(Employee[] storageOfEmployeeRecords){
         int sum = 0;
 
-        for(int i = 0; i < storageOfEmployeeRecords.length;i++){
-            sum+= storageOfEmployeeRecords[i].getSalary();
+        for (Employee storageOfEmployeeRecord : storageOfEmployeeRecords) {
+            if (storageOfEmployeeRecord != null) {
+                sum += storageOfEmployeeRecord.getSalary();
+            }
         }
         System.out.println(sum/storageOfEmployeeRecords.length + "\n");
 
